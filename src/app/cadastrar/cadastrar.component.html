@@ -1,0 +1,82 @@
+<div class="container-fluid">
+
+    <div class="row align-items-center">
+
+        <div class="col-md-6" id="img-bg"></div>
+
+        <div class="col-md-6 mt-5 mb-5">
+
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-10">
+
+                    <h1 class="text-center">Cadastro</h1>
+
+                    <div class="form-group m-3">
+                        <label for="nome">Nome</label>
+                        <input [(ngModel)]='userLogin.nome' class="form-control" type="text" name="nome" id="nome" placeholder="Seu nome">
+                    </div>
+
+                    <div class="form-group m-3">
+                        <label for="email">E-Mail</label>
+                        <input [(ngModel)]='userLogin.email' class="form-control" type="email" name="email" id="email" placeholder="email@email.com.br">
+                    </div>
+
+                    <div class="form-group m-3">
+                        <label for="areaAtuacao">Ramo de Atuação ou Stack</label>
+                        <input [(ngModel)]='userLogin.areaAtuacao' class="form-control" type="text" name="areaAtuacao" id="areaAtuacao" placeholder="Digite aqui">
+                    </div>
+
+                    <div class="form-group m-3">
+                        <label for="cpfCnpj">CPF ou CNPJ</label>
+                        <input [(ngModel)]='userLogin.cpfCnpj' class="form-control" type="text" name="cpfCnpj" id="cpfCnpj" placeholder="CPF ou CNPJ sem pontos ou traços">
+                    </div>
+
+                    <div class="form-group m-3">
+                        <label for="foto">Foto</label>
+                        <input [(ngModel)]='userLogin.foto' class="form-control" type="text" name="foto" id="foto" placeholder="link da sua foto">
+                    </div>
+
+                    <div class="form-group m-3">
+                        <label for="login">Login</label>
+                        <input [(ngModel)]='userLogin.login' class="form-control" type="text" name="login" id="login" placeholder="Escolha um login">
+                    </div>
+
+                    <div class="form-group m-3">
+                        <label for="senha">Senha</label>
+                        <input (input)='confirmSenha($event)' class="form-control" type="password" name="senha" id="senha"
+                            placeholder="Digite sua senha novamente">
+                    </div>
+
+                    <div class="form-group m-3">
+                        <label for="confirmarSenha">Confirmar Senha</label>
+                        <input [(ngModel)]='userLogin.senha' class="form-control" type="password" name="confirmarSenha" id="confirmarSenha"
+                            placeholder="Digite sua senha novamente">
+                    </div>
+
+                    <div class="form-group m-3">
+                        <label for="tipoUsuario">Tipo de Usuário</label>
+                        <select class="form-control" name="tipoUsuario" id="tipoUsuario" (input)='tipoUser($event)'>     
+                            <option>Selecione uma Opção</option>                    
+                            <option value="DEV">DEV</option>
+                            <option value="EMPRESA">EMPRESA</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group m-3">
+                        <label for="genero">Genero</label>
+                        <select class="form-control" name="genero" id="genero" (input)='tipoGenero($event)'> 
+                            <option>Selecione uma Opção</option>                                                  
+                            <option value="MASCULINO">MASCULINO</option>
+                            <option value="FEMININO">FEMININO</option>
+                        </select>
+                    </div>
+
+                    <div class="d-flex justify-content-center m-3">
+                        <button type="submit" class="btn btn-danger m-4" routerLink="/entrar">Cancelar</button>
+                        <button type="submit" class="btn btn-success m-4" (click)='cadastrar()'>Cadastrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
